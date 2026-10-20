@@ -1,0 +1,10 @@
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\bin\Debug\AlgoritmoLZW.exe.config
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\bin\Debug\AlgoritmoLZW.exe
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\bin\Debug\AlgoritmoLZW.pdb
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\obj\Debug\AlgoritmoLZW.csproj.AssemblyReference.cache
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\obj\Debug\AlgoritmoLZW.frmPrincipal.resources
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\obj\Debug\AlgoritmoLZW.Properties.Resources.resources
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\obj\Debug\AlgoritmoLZW.csproj.GenerateResource.cache
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\obj\Debug\AlgoritmoLZW.csproj.CoreCompileInputs.cache
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\obj\Debug\AlgoritmoLZW.exe
+C:\Users\Luiz\Desktop\Faculdade\6 Termo\TTC\AlgoritmoLZW\AlgoritmoLZW\obj\Debug\AlgoritmoLZW.pdb
