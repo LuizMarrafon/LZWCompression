@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|c:\\users\\luiz\\desktop\\faculdade\\6 termo\\ttc\\algoritmolzw\\algoritmolzw\\dicionariolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|solutionrelative:algoritmolzw\\dicionariolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|c:\\users\\luiz\\desktop\\faculdade\\6 termo\\ttc\\algoritmolzw\\algoritmolzw\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|solutionrelative:algoritmolzw\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
@@ -19,6 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DicionarioLZW.cs",
+              "DocumentMoniker": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\DicionarioLZW.cs",
+              "RelativeDocumentMoniker": "AlgoritmoLZW\\DicionarioLZW.cs",
+              "ToolTip": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\DicionarioLZW.cs",
+              "RelativeToolTip": "AlgoritmoLZW\\DicionarioLZW.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAADwv0YAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-21T17:45:58.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "frmPrincipal.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\frmPrincipal.cs",
               "RelativeDocumentMoniker": "AlgoritmoLZW\\frmPrincipal.cs",
