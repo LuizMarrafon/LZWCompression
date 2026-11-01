@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="compressaoLZW.cs" />
+    <Compile Include="DescompressaoLZW.cs" />
     <Compile Include="DicionarioLZW.cs" />
     <Compile Include="Filtros.cs" />
     <Compile Include="frmPrincipal.cs">

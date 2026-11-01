@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,14 +50,23 @@ namespace AlgoritmoLZW
         public int BuscarCodigo(byte[] sequencia)
         {
             int codigoEncontrado = -1;
-            int codigo = 0;
-            while(codigo < proximoCodigo && codigoEncontrado == -1)
+            //se a seq tem só 1 byte, o codigo dela no dic ja é o proprio valor do byte (pq de 0 a 255 o indice é igual ao valor)
+            if (sequencia.Length == 1)
             {
-                if(SequenciasIguais(sequencia, tabela[codigo]))
+                codigoEncontrado = sequencia[0];
+            }
+            else
+            {
+                //se tem mais de 1 byte, só pode estar da posição 256 pra frente, entao nem precisa procurar de 0 a 255
+                int codigo = QuantidadeSimbolosIniciais;
+                while (codigo < proximoCodigo && codigoEncontrado == -1)
                 {
-                    codigoEncontrado = codigo;
+                    if (SequenciasIguais(sequencia, tabela[codigo]))
+                    {
+                        codigoEncontrado = codigo;
+                    }
+                    codigo++;
                 }
-                codigo++;
             }
             return codigoEncontrado;
         }
@@ -68,23 +77,24 @@ namespace AlgoritmoLZW
 
             if (sequencia != null && sequencia.Length > 0 && proximoCodigo < CapacidadeMaxima)
             {
-                int codigoExistente = BuscarCodigo(sequencia);
-
-                if (codigoExistente == -1)
-                {
-                    tabela[proximoCodigo] = sequencia;
-                    codigoAdicionado = proximoCodigo;
-                    proximoCodigo++;
-                }
-                else
-                {
-                    codigoAdicionado = codigoExistente;
-                }
+                tabela[proximoCodigo] = sequencia;
+                codigoAdicionado = proximoCodigo;
+                proximoCodigo++;
             }
 
             return codigoAdicionado;
         }
 
+        public byte[] BuscarSequencia(int codigo)
+        {
+            byte[] sequenciaEncontrada = null;
 
+            if (codigo >= 0 && codigo < proximoCodigo)
+            {
+                sequenciaEncontrada = tabela[codigo];
+            }
+
+            return sequenciaEncontrada;
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace AlgoritmoLZW
+namespace AlgoritmoLZW
 {
     partial class frmPrincipal
     {
@@ -33,9 +33,8 @@
             this.btnAbrirImagem = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.ditalacao = new System.Windows.Forms.Button();
-            this.ditalacaoDMA = new System.Windows.Forms.Button();
-            this.erosao = new System.Windows.Forms.Button();
+            this.compressao = new System.Windows.Forms.Button();
+            this.descompressao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxImg1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxImg2)).BeginInit();
             this.SuspendLayout();
@@ -82,47 +81,35 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // ditalacao
+            // compressao
             // 
-            this.ditalacao.Location = new System.Drawing.Point(297, 630);
-            this.ditalacao.Margin = new System.Windows.Forms.Padding(4);
-            this.ditalacao.Name = "ditalacao";
-            this.ditalacao.Size = new System.Drawing.Size(277, 28);
-            this.ditalacao.TabIndex = 109;
-            this.ditalacao.Text = "Dilatação";
-            this.ditalacao.UseVisualStyleBackColor = true;
-            this.ditalacao.Click += new System.EventHandler(this.ditalacao_Click);
+            this.compressao.Location = new System.Drawing.Point(297, 630);
+            this.compressao.Margin = new System.Windows.Forms.Padding(4);
+            this.compressao.Name = "compressao";
+            this.compressao.Size = new System.Drawing.Size(277, 28);
+            this.compressao.TabIndex = 109;
+            this.compressao.Text = "Compressão LZW";
+            this.compressao.UseVisualStyleBackColor = true;
+            this.compressao.Click += new System.EventHandler(this.compressao_Click);
             // 
-            // ditalacaoDMA
+            // descompressao
             // 
-            this.ditalacaoDMA.Location = new System.Drawing.Point(582, 630);
-            this.ditalacaoDMA.Margin = new System.Windows.Forms.Padding(4);
-            this.ditalacaoDMA.Name = "ditalacaoDMA";
-            this.ditalacaoDMA.Size = new System.Drawing.Size(277, 28);
-            this.ditalacaoDMA.TabIndex = 110;
-            this.ditalacaoDMA.Text = "Dilatação DMA";
-            this.ditalacaoDMA.UseVisualStyleBackColor = true;
-            this.ditalacaoDMA.Click += new System.EventHandler(this.ditalacaoDMA_Click);
-            // 
-            // erosao
-            // 
-            this.erosao.Location = new System.Drawing.Point(867, 630);
-            this.erosao.Margin = new System.Windows.Forms.Padding(4);
-            this.erosao.Name = "erosao";
-            this.erosao.Size = new System.Drawing.Size(277, 28);
-            this.erosao.TabIndex = 111;
-            this.erosao.Text = "Erosão";
-            this.erosao.UseVisualStyleBackColor = true;
-            this.erosao.Click += new System.EventHandler(this.erosao_Click);
+            this.descompressao.Location = new System.Drawing.Point(582, 630);
+            this.descompressao.Margin = new System.Windows.Forms.Padding(4);
+            this.descompressao.Name = "descompressao";
+            this.descompressao.Size = new System.Drawing.Size(277, 28);
+            this.descompressao.TabIndex = 110;
+            this.descompressao.Text = "Descompressão LZW";
+            this.descompressao.UseVisualStyleBackColor = true;
+            this.descompressao.Click += new System.EventHandler(this.descompressao_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1627, 665);
-            this.Controls.Add(this.erosao);
-            this.Controls.Add(this.ditalacaoDMA);
-            this.Controls.Add(this.ditalacao);
+            this.Controls.Add(this.descompressao);
+            this.Controls.Add(this.compressao);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAbrirImagem);
             this.Controls.Add(this.pictBoxImg2);
@@ -144,9 +131,7 @@
         private System.Windows.Forms.Button btnAbrirImagem;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.Button ditalacao;
-        private System.Windows.Forms.Button ditalacaoDMA;
-        private System.Windows.Forms.Button erosao;
+        private System.Windows.Forms.Button compressao;
+        private System.Windows.Forms.Button descompressao;
     }
 }
-
