@@ -44,7 +44,18 @@ namespace AlgoritmoLZW
                 imageBitmap = (Bitmap)image;
                 List<int> codigos = compressaoLZW.compreesão(imageBitmap);
                 compressaoLZW.SalvarArquivo("../../imagem.lzw", imageBitmap.Width, imageBitmap.Height, codigos);
-                MessageBox.Show("Imagem comprimida com sucesso!");
+
+                long bytesOriginais = imageBitmap.Width * imageBitmap.Height * 3;
+                long bytesComprimidos = new FileInfo("../../imagem.lzw").Length;
+                double reducao = (1.0 - ((double)bytesComprimidos / bytesOriginais)) * 100.0;
+
+                MessageBox.Show("Imagem comprimida com sucesso!\n\n" +
+                                "Dimensões: " + imageBitmap.Width + "x" + imageBitmap.Height + " pixels\n" +
+                                "Tamanho original (bytes RGB): " + bytesOriginais + " bytes\n" +
+                                "Quantidade de códigos gerados: " + codigos.Count + "\n" +
+                                "Tamanho do arquivo comprimido (.lzw): " + bytesComprimidos + " bytes\n" +
+                                "Redução de tamanho: " + reducao.ToString("F2") + "%\n\n" +
+                                "Arquivos 'imagem.lzw' e 'dicionario.txt' salvos na pasta do projeto.");
             }
         }
 

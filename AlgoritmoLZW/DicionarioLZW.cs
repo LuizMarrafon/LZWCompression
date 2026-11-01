@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,9 +62,13 @@ namespace AlgoritmoLZW
                 int codigo = QuantidadeSimbolosIniciais;
                 while (codigo < proximoCodigo && codigoEncontrado == -1)
                 {
-                    if (SequenciasIguais(sequencia, tabela[codigo]))
+                    //só chama a funcao pra comparar tudo se o tamanho e o primeiro byte ja forem iguais
+                    if (tabela[codigo].Length == sequencia.Length && tabela[codigo][0] == sequencia[0])
                     {
-                        codigoEncontrado = codigo;
+                        if (SequenciasIguais(sequencia, tabela[codigo]))
+                        {
+                            codigoEncontrado = codigo;
+                        }
                     }
                     codigo++;
                 }
@@ -95,6 +100,29 @@ namespace AlgoritmoLZW
             }
 
             return sequenciaEncontrada;
+        }
+
+        //----------------------- exibir
+        //salva em um txt todas as sequencias novas q o dicionario aprendeu (da posicao 256 pra frente) pra poder visualizar
+        public void SalvarDicionarioTxt(string caminhoTxt)
+        {
+            StreamWriter escritor = new StreamWriter(caminhoTxt);
+            escritor.WriteLine("Posicoes ocupadas no dicionario: " + proximoCodigo + " de " + CapacidadeMaxima);
+            escritor.WriteLine("Codigos 0 a 255: bytes isolados iniciais");
+            escritor.WriteLine("Codigos 256 ate " + (proximoCodigo - 1) + ": novas sequencias aprendidas");
+            escritor.WriteLine("--------------------------------------------------");
+
+            for (int codigo = QuantidadeSimbolosIniciais; codigo < proximoCodigo; codigo++)
+            {
+                string seqTexto = "";
+                for (int i = 0; i < tabela[codigo].Length; i++)
+                {
+                    seqTexto += tabela[codigo][i] + " ";
+                }
+                escritor.WriteLine("Codigo " + codigo + " -> [ " + seqTexto + "]");
+            }
+
+            escritor.Close();
         }
     }
 }

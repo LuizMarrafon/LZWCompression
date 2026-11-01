@@ -85,6 +85,8 @@ namespace AlgoritmoLZW
             }
             codigosComprimidos.Add(codigoDaAtual);
 
+            dicionario.SalvarDicionarioTxt("../../dicionario.txt");
+
             return codigosComprimidos;
         }
 
