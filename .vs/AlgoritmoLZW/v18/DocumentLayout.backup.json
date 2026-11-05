@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|c:\\users\\luiz\\desktop\\faculdade\\6 termo\\ttc\\algoritmolzw\\algoritmolzw\\fila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|solutionrelative:algoritmolzw\\fila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\algoritmolzw\\dicionariolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|solutionrelative:algoritmolzw\\dicionariolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\algoritmolzw\\descompressaolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|solutionrelative:algoritmolzw\\descompressaolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\algoritmolzw\\compressaolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|solutionrelative:algoritmolzw\\compressaolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\algoritmolzw\\descompressaolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|solutionrelative:algoritmolzw\\descompressaolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\algoritmolzw\\dicionariolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|solutionrelative:algoritmolzw\\dicionariolzw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|c:\\users\\luiz\\desktop\\faculdade\\6 termo\\ttc\\algoritmolzw\\algoritmolzw\\fila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|solutionrelative:algoritmolzw\\fila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62FFB5F4-39D7-491B-B53A-8266E2053D1B}|AlgoritmoLZW\\AlgoritmoLZW.csproj|C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\algoritmolzw\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Fila.cs",
               "DocumentMoniker": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\Fila.cs",
               "RelativeDocumentMoniker": "AlgoritmoLZW\\Fila.cs",
@@ -55,27 +55,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DescompressaoLZW.cs",
+              "DocumentIndex": 0,
+              "Title": "descompressaoLZW.cs",
               "DocumentMoniker": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\DescompressaoLZW.cs",
               "RelativeDocumentMoniker": "AlgoritmoLZW\\DescompressaoLZW.cs",
               "ToolTip": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\DescompressaoLZW.cs",
               "RelativeToolTip": "AlgoritmoLZW\\DescompressaoLZW.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAE4AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAADwv5UAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T17:40:32.917Z"
+              "WhenOpened": "2026-11-01T17:40:32.917Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "compressaoLZW.cs",
               "DocumentMoniker": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\compressaoLZW.cs",
               "RelativeDocumentMoniker": "AlgoritmoLZW\\compressaoLZW.cs",
               "ToolTip": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\compressaoLZW.cs",
               "RelativeToolTip": "AlgoritmoLZW\\compressaoLZW.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAACGAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIwAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T17:39:10.957Z"
+              "WhenOpened": "2026-11-01T17:39:10.957Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -91,15 +93,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DicionarioLZW.cs",
+              "DocumentIndex": 2,
+              "Title": "dicionarioLZW.cs",
               "DocumentMoniker": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\DicionarioLZW.cs",
               "RelativeDocumentMoniker": "AlgoritmoLZW\\DicionarioLZW.cs",
               "ToolTip": "C:\\Users\\Luiz\\Desktop\\Faculdade\\6 Termo\\TTC\\AlgoritmoLZW\\AlgoritmoLZW\\DicionarioLZW.cs",
               "RelativeToolTip": "AlgoritmoLZW\\DicionarioLZW.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-01T17:39:10.989Z"
+              "WhenOpened": "2026-11-01T17:39:10.989Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

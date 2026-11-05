@@ -105,6 +105,7 @@ namespace AlgoritmoLZW
                 }
             }
         }
+        
         public static void salvarArq(string caminhoArquivo, int width, int height, Fila codigosComprimidos)
         {
             // cria um arquivo para salvar os códigos comprimidos, e também a largura e altura da imagem no começo do arquivo
@@ -114,17 +115,52 @@ namespace AlgoritmoLZW
             BinaryWriter escritor = new BinaryWriter(arquivo);
 
             // salva a largura e altura no começo do arquivo pra saber o tamanho da imagem na hora de reconstruir
+            // cabeçalho com largura e altura (4 bytes cada)
             escritor.Write(width);
             escritor.Write(height);
 
-            // como os codigos do dic vao ate 4095 eles nao cabem em 1 byte (que só vai ate 255), e na Fila usamos int que gasta 4 bytes (32 bits)
-            // entao convertemos pra ushort que gasta só 2 bytes (16 bits) por codigo, diminuindo pela metade o tamanho que os codigos ocupam no arquivo
             NoFila atual = codigosComprimidos.getInicio();
-            while(atual != null)
+            while (atual != null)
             {
-                escritor.Write((ushort)atual.getValor());
+                int codigo1 = atual.getValor();
                 atual = atual.getProx();
+
+                // se o atual for != de null, significa que temos um par de códigos para gravar (2 códigos de 12 bits = 24 bits = 3 bytes)
+                // se o atual for null, significa que temos apenas 1 código sobrando (1 código de 12 bits = 12 bits = 2 bytes), nessa parte nao tem muito o que fazer e vamos utilizar 
+                // 2 bytes para gravar o código restante, mesmo que isso desperdice 4 bits do arquivo final
+                if (atual != null)
+                {
+                    // pega o valor do segundo código do par e avança o ponteiro da fila
+                    int codigo2 = atual.getValor();
+                    atual = atual.getProx();
+
+                    // aqui começa a gravação dos dois codigos em 3 bytes, cada código tem 12 bits, então precisamos fazer algumas operações de bit para separar os bits corretamente
+                    // o primeiro byte vai ter os 8 bits inicias do primeiro código, o segundo byte vai ter os 4 bits finais do primeiro código e os 4 bits iniciais do segundo código, e o terceiro byte vai ter os 8 bits finais do segundo código
+                    // o >>4 empurra os bits 4 casas para a direita, "jogando fora"
+                    // o &0x0F pega os 4 bits finais do primeiro código, e o <<4 empurra esses 4 bits para a esquerda, "abrindo espaço" para os 4 bits iniciais do segundo código
+                    // e o | junta os dois pedaços, formando o segundo byte completo (4 bits + 4 bits = 8 bits)
+                    // o >>8 empurra os bits 8 casas para a direita, ficando apenas com os 4 bits iniciais do segundo codigo
+                    // por fim o &0xFF pega os 8 bits finais do segundo código, que é o que queremos para o terceiro byte
+                    byte byte1 = (byte)(codigo1 >> 4);
+                    byte byte2 = (byte)(((codigo1 & 0x0F) << 4) | (codigo2 >> 8));
+                    byte byte3 = (byte)(codigo2 & 0xFF);
+
+                    escritor.Write(byte1);
+                    escritor.Write(byte2);
+                    escritor.Write(byte3);
+                }
+                else
+                {
+                    // aqui a quantidade codigo é impar, então só temos 1 código para gravar, e vamos utilizar 2 bytes para gravar esse código de 12 bits, mesmo que isso desperdice 4 bits do arquivo final
+                    // ele empurra os 4 bits finais pra fora, e depois no byte2 ele pega os 4 bits finais do codigo1 e empurra 4 bits pra esquerda
+                    byte byte1 = (byte)(codigo1 >> 4);
+                    byte byte2 = (byte)((codigo1 & 0x0F) << 4);
+
+                    escritor.Write(byte1);
+                    escritor.Write(byte2);
+                }
             }
+
             escritor.Close();
             arquivo.Close();
         }

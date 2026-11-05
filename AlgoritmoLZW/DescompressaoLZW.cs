@@ -90,23 +90,57 @@ namespace AlgoritmoLZW
 
         public static Fila LerArq(string caminhoArquivo, ref int width, ref int height)
         {
-            // abre o arquivo comprimido e lê os códigos comprimidos, retornando uma lista com eles e preenchendo as variáveis width e height que estao por referencia
+            // abre o arquivo comprimido e lê os códigos comprimidos, retornando uma fila com eles e preenchendo as variáveis width e height que estao por referencia
             FileStream arquivo = new FileStream(caminhoArquivo, FileMode.Open);
 
-            // como explicamos antes na compressao utilizamos um binaryReader
+            // como explicamos antes na compressao utilizamos um binaryReader, que lê os bytes puros do arquivo do mesmo jeito que o BinaryWriter gravou
             BinaryReader leitor = new BinaryReader(arquivo);
 
-            // pega a largura e altura q foram salvas no começo do arquivo
+            // pega a largura e altura q foram salvas no começo do arquivo (cabeçalho de 4 bytes cada)
             width = leitor.ReadInt32();
             height = leitor.ReadInt32();
 
             Fila codigosComprimidos = new Fila();
 
-            // vai lendo de 2 em 2 bytes (ushort) ate acabar o arquivo e colocando na lista
-            while(arquivo.Position < arquivo.Length)
+            // vai lendo o arquivo ate acabar, desfazendo o que foi feito no salvarArq (3 bytes viram 2 códigos de 12 bits dnv)
+            while (arquivo.Position < arquivo.Length)
             {
-                ushort codigoLido = leitor.ReadUInt16();
-                codigosComprimidos.enqueue(codigoLido);
+                // calcula quantos bytes ainda faltam ler no arquivo, pra saber se ainda tem um par de códigos (3 bytes) ou se sobrou só o último código ímpar (2 bytes)
+                long bytesRestantes = arquivo.Length - arquivo.Position;
+
+                // se ainda tem 3 bytes ou mais, significa que temos um par de códigos para ler (3 bytes = 24 bits = 2 códigos de 12 bits)
+                if (bytesRestantes >= 3)
+                {
+                    // lê os 3 bytes que foram gravados juntos no salvarArq
+                    byte byte1 = leitor.ReadByte();
+                    byte byte2 = leitor.ReadByte();
+                    byte byte3 = leitor.ReadByte();
+
+                    // aqui é o inverso da compressão, juntamos os pedaços de bits pra montar os dois códigos de 12 bits de novo
+                    // o byte1 tem os 8 bits iniciais do codigo1, entao o <<4 empurra ele 4 casas pra esquerda, "abrindo espaço" pros 4 bits finais que faltam
+                    // o byte2 tem os 4 bits finais do codigo1 na metade da esquerda, entao o >>4 empurra eles pra direita, jogando fora os 4 bits do codigo2
+                    // o | junta os dois pedaços, formando o codigo1 completo (8 bits + 4 bits = 12 bits)
+                    int codigo1 = (byte1 << 4) | (byte2 >> 4);
+
+                    // o &0x0F pega só os 4 bits finais do byte2 (que sao os 4 bits iniciais do codigo2), e o <<8 empurra eles 8 casas pra esquerda, "abrindo espaço" pro byte3
+                    // o byte3 tem os 8 bits finais do codigo2, entao o | junta os dois pedaços, formando o codigo2 completo (4 bits + 8 bits = 12 bits)
+                    int codigo2 = ((byte2 & 0x0F) << 8) | byte3;
+
+                    // coloca os dois códigos na fila na mesma ordem em que foram gravados
+                    codigosComprimidos.enqueue(codigo1);
+                    codigosComprimidos.enqueue(codigo2);
+                }
+                else
+                {
+                    // aqui a quantidade de códigos era ímpar, então sobrou só 1 código gravado em 2 bytes no final do arquivo
+                    byte byte1 = leitor.ReadByte();
+                    byte byte2 = leitor.ReadByte();
+
+                    // monta o código do mesmo jeito que o codigo1 de cima, o byte1 empurra 4 casas pra esquerda e o byte2 empurra 4 casas pra direita
+                    // jogando fora os 4 bits que ficaram vazios (os 4 bits que foram desperdiçados no salvarArq)
+                    int codigo1 = (byte1 << 4) | (byte2 >> 4);
+                    codigosComprimidos.enqueue(codigo1);
+                }
             }
 
             leitor.Close();
